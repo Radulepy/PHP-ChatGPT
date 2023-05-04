@@ -1,3 +1,4 @@
+<?php
 // Simple ChatGPT Class that enables both text and image prompt
 // to use this class in another file just import it and call one of the 2 functions createTextRequest() or generateImage() with your prompt (or options)
 //
@@ -8,8 +9,6 @@
 // echo $ai->generateImage('a cat on a post lamp');               // print the image URL
 // echo $ai->createTextRequest('what is the weather in Romania?') // print the text response
 // // https://github.com/Radulepy/PHP-ChatGPT
-
-<?php
 
 class ChatGPT
 {
@@ -61,6 +60,7 @@ class ChatGPT
 
         $response = curl_exec($this->curl);
         $response = json_decode($response, true);
+		$this->data = array();
         return $response['choices'][0]['text'] ?? -1; // return text or -1 if error
     }
 
@@ -78,6 +78,7 @@ class ChatGPT
 
         $response = curl_exec($this->curl);
         $response = json_decode($response, true);
+		$this->data = array();
         return $response['data'][0]['url'] ?? -1; //return the first url or -1 if error
     }
 }
