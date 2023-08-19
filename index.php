@@ -2,7 +2,7 @@
 
 $curl = curl_init();    // create cURL session
 
-$API_KEY = "paste_your_API_here"; // login to https://beta.openai.com/account/api-keys and create an API KEY
+$API_KEY = "ADD_YOUR_API_KEY_HERE"; // login to https://beta.openai.com/account/api-keys and create an API KEY
 
 $url = "https://api.openai.com/v1/completions";
 curl_setopt($curl, CURLOPT_URL, $url);
